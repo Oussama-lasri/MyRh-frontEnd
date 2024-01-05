@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { OffreService } from './_service/offre.service';
+import { OffreResponse } from './_model/response/offre-response';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MyRh-frontEnd';
+ 
+
+
 }

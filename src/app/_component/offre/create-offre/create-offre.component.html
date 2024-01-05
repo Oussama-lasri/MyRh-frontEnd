@@ -1,0 +1,136 @@
+<div class="p-4 max-w-xl mx-auto mb-10 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+
+    <form [formGroup]="offreForm" (ngSubmit)="submitForm()">
+        <div class="space-y-12">
+            <div class="border-b border-gray-900/10 pb-12">
+                <h2 class="text-base font-semibold leading-7 text-gray-900">recruter</h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600">This information will be displayed publicly so be
+                    careful
+                    what you share.</p>
+
+                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                    <div class="sm:col-span-3">
+                        <label for="titre" class="block text-sm font-medium leading-6 text-gray-900">ville
+                            professionel</label>
+                        <div class="mt-2">
+                            <input formControlName="titre" type="ville" name="titre" id="titre"
+                                autocomplete="given-name"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <div class="text-red-600"
+                                *ngIf="offreForm.get('titre')?.invalid && (offreForm.get('titre')?.touched ||offreForm.get('titre')?.dirty)">
+                                <div *ngIf="offreForm.get('titre')?.getError('required')">this field is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sm:col-span-3">
+                        <label for="niveauEducation"
+                            class="block text-sm font-medium leading-6 text-gray-900">niveauEducation</label>
+                        <div class="mt-2">
+                            <input formControlName="niveauEducation" type="text" name="niveauEducation"
+                                id="niveauEducation" autocomplete="niveauEducation"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <div class="text-red-600"
+                                *ngIf="offreForm.get('niveauEducation')?.invalid && (offreForm.get('niveauEducation')?.touched ||offreForm.get('niveauEducation')?.dirty)">
+                                <div *ngIf="offreForm.get('niveauEducation')?.getError('niveauEducation')">this field is
+                                    required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sm:col-span-3">
+                        <label for="ville" class="block text-sm font-medium leading-6 text-gray-900">ville
+                            address</label>
+                        <div class="mt-2">
+                            <input formControlName="ville" id="ville" name="ville" type="ville" autocomplete="ville"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <div class="text-red-600"
+                                *ngIf="offreForm.get('ville')?.invalid && (offreForm.get('ville')?.touched ||offreForm.get('ville')?.dirty)">
+                                <div *ngIf="offreForm.get('ville')?.getError('ville')">this field is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-span-3">
+                        <label for="niveauEducation"
+                            class="block text-sm font-medium leading-6 text-gray-900">niveauEducation</label>
+                        <div class="mt-2">
+                            <input formControlName="niveauEducation" type="text" name="niveauEducation"
+                                id="niveauEducation" autocomplete="niveauEducation"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <div class="text-red-600"
+                                *ngIf="offreForm.get('niveauEducation')?.invalid && (offreForm.get('niveauEducation')?.touched ||offreForm.get('niveauEducation')?.dirty)">
+                                <div *ngIf="offreForm.get('niveauEducation')?.getError('required')">this field is
+                                    required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sm:col-span-full">
+                        <label for="salaire" class="block text-sm font-medium leading-6 text-gray-900">salaire</label>
+                        <div class="mt-2">
+                            <input 
+                            formControlName="salaire"
+                            type="number" name="salaire" id="salaire" autocomplete="address-level2"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                        <div class="text-red-600"
+                            *ngIf="offreForm.get('salaire')?.invalid && (offreForm.get('salaire')?.touched ||offreForm.get('salaire')?.dirty)">
+                            <div *ngIf="offreForm.get('salaire')?.getError('required')">this field is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sm:col-span-full">
+                        <label for="profilRechecher"
+                            class="block text-sm font-medium leading-6 text-gray-900">profilRechecher</label>
+                        <div class="mt-2">
+                            <input
+                            formControlName="profilRechecher" 
+                             type="text" name="profilRechecher" id="profilRechecher" autocomplete="address-level2"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                        <div class="text-red-600" profilRechecher
+                            *ngIf="offreForm.get('profilRechecher')?.invalid && (offreForm.get('profilRechecher')?.touched ||offreForm.get('profilRechecher')?.dirty)">
+                            <div *ngIf="offreForm.get('profilRechecher')?.getError('required')">this field is
+                                required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-full">
+                        <label for="description"
+                            class="block text-sm font-medium leading-6 text-gray-900">description</label>
+                        <div class="mt-2">
+                            <textarea
+                            formControlName="description"
+                            type="text" name="description" id="description" autocomplete="address-level2"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </textarea>
+                        </div>
+                        <div class="text-red-600" 
+                            *ngIf="offreForm.get('description')?.invalid && (offreForm.get('description')?.touched ||offreForm.get('description')?.dirty)">
+                            <div *ngIf="offreForm.get('description')?.getError('required')">this field is
+                                required
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-6 flex items-center justify-end gap-x-6">
+            <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+            <input type="submit"
+                class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                value="submit"/>
+        </div>
+    </form>
+</div>
